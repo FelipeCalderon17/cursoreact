@@ -12,7 +12,10 @@ import Tercero from "./components/punto3"; */
 import Buscar from "./components/Buscar";
 import FrmAgregar from "./components/FrmAgregar";
 import ListarPeliculas from "./components/ListarPeliculas";
+import React, { useState } from "react";
+
 function App() {
+  const [datos, setDatos] = useState([]);
   //Render
   return (
     <>
@@ -38,10 +41,10 @@ function App() {
             </li>
           </ul>
         </nav>
-        <ListarPeliculas />
+        <ListarPeliculas datos={datos} setDatos={setDatos} />
         <aside className="lateral">
           <Buscar />
-          <FrmAgregar />
+          <FrmAgregar datos={datos} setDatos={setDatos} />
         </aside>
         <footer className="footer">
           &copy; Peliculas !! -<a href="https://pelisflix.quest/">pelisflix</a>
